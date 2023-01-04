@@ -29,6 +29,5 @@ abstract class ShoppingDatabase : RoomDatabase() {
                 context.applicationContext,
                 ShoppingDatabase::class.java, "ShoopingDB.db"
             ).build()
-
     }
 }

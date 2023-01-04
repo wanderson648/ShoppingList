@@ -17,6 +17,6 @@ class ShoppingActivity : AppCompatActivity() {
         val factory = ShoppingViewModelFactory(repository)
 
         val viewModel = ViewModelProviders.of(this, factory)[ShoppingViewModel::class.java]
-        
+
     }
 }
