@@ -7,7 +7,7 @@ import com.example.shoppinglist.data.db.entities.ShoppingItem
 @Dao
 interface ShoppingDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     suspend fun upsert(item: ShoppingItem)
 
     @Delete

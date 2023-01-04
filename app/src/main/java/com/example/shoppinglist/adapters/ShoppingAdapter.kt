@@ -10,7 +10,7 @@ import com.example.shoppinglist.ui.shoppinglist.ShoppingViewModel
 import kotlinx.android.synthetic.main.shopping_item.view.*
 
 class ShoppingAdapter(
-    private val items: List<ShoppingItem>,
+    var items: List<ShoppingItem>,
     private val viewModel: ShoppingViewModel
 ): RecyclerView.Adapter<ShoppingAdapter.ShoppingViewHolder>() {
 
@@ -32,18 +32,6 @@ class ShoppingAdapter(
 
         holder.itemView.iv_delete.setOnClickListener {
             viewModel.delete(curShoppingItem)
-        }
-
-        holder.itemView.iv_plus.setOnClickListener {
-            curShoppingItem.amount++
-            viewModel.upsert(curShoppingItem)
-        }
-
-        holder.itemView.iv_minus.setOnClickListener {
-            if(curShoppingItem.amount > 0) {
-                curShoppingItem.amount--
-                viewModel.upsert(curShoppingItem)
-            }
         }
     }
 
